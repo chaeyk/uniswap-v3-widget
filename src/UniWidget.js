@@ -2,8 +2,6 @@ import { SwapWidget } from '@uniswap/widgets';
 import '@uniswap/widgets/fonts.css';
 import { useMetaMask } from 'metamask-react/lib/use-metamask';
 
-const jsonRpcEndpoint = 'http://dev1.dq.cow.nwz.cloud:7810'
-
 function getStatusMessage(status, connect, account, chainId) {
     if (status === "initializing") return <div>Synchronisation with MetaMask ongoing...</div>
     if (status === "unavailable") return <div>MetaMask not available :(</div>
