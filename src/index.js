@@ -2,12 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import UniWidget from './UniWidget';
 import reportWebVitals from './reportWebVitals';
+import { Web3Provider } from '@ethersproject/providers';
+import { MetaMaskProvider } from 'metamask-react';
+
+function getLibrary(provider) {
+  const library = new Web3Provider(provider, "any");
+  return library;
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MetaMaskProvider>
+      <UniWidget />
+    </MetaMaskProvider>
   </React.StrictMode>
 );
 
